@@ -27,7 +27,7 @@ class PowerschoolBrowser():
         different pages, and getting page source.
     """
 
-    def __init__(self, debug : bool = False, headless : bool = False):
+    def __init__(self, debug : bool = False, headless : bool = False,Link='https://powerschool.nlmusd.k12.ca.us/'):
         options = webdriver.FirefoxOptions()
 
         if headless:
@@ -36,7 +36,7 @@ class PowerschoolBrowser():
         self.browser = webdriver.Firefox(executable_path="./geckodriver", firefox_options=options)
         self.browser.implicitly_wait(5)
         
-        self.website = "https://powerschool.nlmusd.k12.ca.us/"
+        self.website = Link
         self.loginDir = "public/home.html"
         self.homeDir = "guardian/home.html"
         self.debug = debug
